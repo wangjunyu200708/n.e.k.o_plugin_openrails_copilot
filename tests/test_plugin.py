@@ -4,6 +4,7 @@ Open Rails Copilot Plugin 测试脚本
 """
 
 import asyncio
+import importlib
 import sys
 from pathlib import Path
 
@@ -16,7 +17,7 @@ async def test_plugin_import():
     """测试插件是否能正确导入"""
     print("测试 1: 导入插件...")
     try:
-        from plugin.plugins.openrails_copilot import OpenRailsCopilotPlugin
+        importlib.import_module("plugin.plugins.openrails_copilot")
         print("✓ 插件导入成功")
         return True
     except Exception as e:

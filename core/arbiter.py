@@ -20,14 +20,16 @@ from typing import Any
 
 from .constants import PLAYER_QUIET_WINDOW_S
 from .event_catalog import (
-    CATEGORIES,
-    CATEGORY_DEFAULTS,
     CAT_EMERGENCY,
     CAT_PARKING,
     CAT_SHUNT,
     CAT_SIGNAL,
+    CATEGORIES,
+    CATEGORY_DEFAULTS,
     EventSpec,
     scaled_cooldown,
+)
+from .event_catalog import (
     spec as _spec_of,
 )
 from .safety_guard import SafetyGuard

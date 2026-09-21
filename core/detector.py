@@ -25,7 +25,6 @@ from dataclasses import dataclass
 from typing import Any
 
 from .constants import (
-    RED_APPROACH_ENTER_M,
     RED_APPROACH_EXIT_M,
     RED_SIGNAL_SAFE_DISTANCE_M,
     SHUNT_OVERSPEED_KMH,
@@ -34,6 +33,8 @@ from .constants import (
 )
 from .event_catalog import (
     EventSpec,
+)
+from .event_catalog import (
     spec as _spec,
 )
 from .snapshot import (

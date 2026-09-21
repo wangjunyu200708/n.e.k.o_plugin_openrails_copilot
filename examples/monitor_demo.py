@@ -4,8 +4,9 @@ Open Rails Copilot Plugin - 实时监控演示
 """
 
 import asyncio
-import httpx
 from datetime import datetime
+
+import httpx
 
 
 class MockMonitor:
@@ -102,7 +103,7 @@ class MockMonitor:
             alerts.append({
                 "type": "overspeed_warning",
                 "severity": "high",
-                "message": f"🚨 超速警告激活！",
+                "message": "🚨 超速警告激活！",
             })
         
         # 更新历史数据
@@ -192,7 +193,7 @@ async def main():
                     print(f"{'':11}━━━━━━━━━━━━━━\n")
                 else:
                     if sample_count % 5 == 0:  # 每 10 秒显示一次正常状态
-                        print(f"           ✅ 列车运行正常\n")
+                        print("           ✅ 列车运行正常\n")
                     else:
                         print()
                 

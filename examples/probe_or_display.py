@@ -29,7 +29,6 @@ Output is printed and also written to ``<plugin_dir>/log/display_<ts>.txt``.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path

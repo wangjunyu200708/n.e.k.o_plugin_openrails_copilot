@@ -3,6 +3,7 @@
 """
 
 import asyncio
+
 import httpx
 
 
@@ -86,7 +87,7 @@ async def quick_test():
             elif speed > speed_limit and speed_limit > 0:
                 print(f"  🚨 超速！当前 {speed:.1f} km/h，限速 {speed_limit:.0f} km/h")
             else:
-                print(f"  ✅ 列车正常运行")
+                print("  ✅ 列车正常运行")
             
             if brake > 80:
                 print(f"  🚨 紧急制动中！制动力 {brake:.1f}%")

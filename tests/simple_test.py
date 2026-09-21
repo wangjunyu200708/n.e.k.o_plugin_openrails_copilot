@@ -4,8 +4,6 @@ Open Rails Copilot Plugin 简单测试
 """
 
 import asyncio
-import sys
-from pathlib import Path
 
 
 def test_basic_logic():
@@ -90,7 +88,7 @@ async def test_httpx_availability():
         print("✓ httpx 已安装")
         
         # 测试创建客户端
-        async with httpx.AsyncClient(timeout=3.0) as client:
+        async with httpx.AsyncClient(timeout=3.0):
             print("✓ httpx 客户端创建成功")
         
         return True

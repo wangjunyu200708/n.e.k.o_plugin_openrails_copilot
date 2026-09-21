@@ -20,12 +20,12 @@
   python plugin/plugins/openrails_copilot/config_manager.py diff conservative aggressive
 """
 
-import json
-import shutil
-from pathlib import Path
-from datetime import datetime
 import argparse
+import json
 import re
+import shutil
+from datetime import datetime
+from pathlib import Path
 
 
 class ConfigManager:
@@ -74,7 +74,7 @@ class ConfigManager:
         config_dir = self.configs_dir / name
         if not config_dir.exists():
             print(f"❌ 配置 '{name}' 不存在")
-            print(f"\n可用配置:")
+            print("\n可用配置:")
             self.list_configs()
             return
         

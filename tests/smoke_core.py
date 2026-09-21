@@ -40,27 +40,23 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-_PROJECT_ROOT = Path(__file__).resolve().parents[3]
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
+if str(Path(__file__).resolve().parents[3]) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-_PLUGIN_DIR = Path(__file__).resolve().parent
-_LOG_DIR = _PLUGIN_DIR / "log"
-
-from plugin.plugins.openrails_copilot.core import event_catalog as catalog  # noqa: E402
-from plugin.plugins.openrails_copilot.core.arbiter import (  # noqa: E402
+from plugin.plugins.openrails_copilot.core import event_catalog as catalog
+from plugin.plugins.openrails_copilot.core.arbiter import (
     SC_NORMAL,
     SC_SHUNTING,
     SC_STATION_STOP,
     SC_STOPPED,
     Arbiter,
 )
-from plugin.plugins.openrails_copilot.core.constants import (  # noqa: E402
+from plugin.plugins.openrails_copilot.core.constants import (
     GLOBAL_RATE_LIMIT_S,
     RED_APPROACH_EXIT_M,
     RED_SIGNAL_SAFE_DISTANCE_M,
 )
-from plugin.plugins.openrails_copilot.core.detector import (  # noqa: E402
+from plugin.plugins.openrails_copilot.core.detector import (
     ENABLE_GAUGE_BRAKE_NOT_RELEASED,
     ENABLE_SHUNT_OVERSPEED,
     ENABLE_SIG_INCONSISTENT,
@@ -68,10 +64,12 @@ from plugin.plugins.openrails_copilot.core.detector import (  # noqa: E402
     Detector,
     parse_brake_hud,
 )
-from plugin.plugins.openrails_copilot.core.push_sender import PushSender  # noqa: E402
-from plugin.plugins.openrails_copilot.core.safety_guard import SafetyGuard  # noqa: E402
-from plugin.plugins.openrails_copilot.core.snapshot import Snapshot, TrackItem  # noqa: E402
+from plugin.plugins.openrails_copilot.core.push_sender import PushSender
+from plugin.plugins.openrails_copilot.core.safety_guard import SafetyGuard
+from plugin.plugins.openrails_copilot.core.snapshot import Snapshot, TrackItem
 
+_PLUGIN_DIR = Path(__file__).resolve().parent
+_LOG_DIR = _PLUGIN_DIR / "log"
 
 # ---------------------------------------------------------------------------
 # Harness

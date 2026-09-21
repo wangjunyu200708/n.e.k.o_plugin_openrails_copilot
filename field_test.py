@@ -17,13 +17,13 @@ Open Rails Copilot - 实战验证工具
   - field_test_summary.md   （可读报告）
 """
 
+import argparse
 import asyncio
 import json
 import time
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from collections import defaultdict, Counter
-import argparse
 
 try:
     import httpx
@@ -33,12 +33,13 @@ except ImportError:
 
 # 复用插件的核心模块
 import sys
+
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from plugin.plugins.openrails_copilot.core.snapshot import build_snapshot
-from plugin.plugins.openrails_copilot.core.detector import Detector
 from plugin.plugins.openrails_copilot.core.arbiter import Arbiter
+from plugin.plugins.openrails_copilot.core.detector import Detector
 from plugin.plugins.openrails_copilot.core.safety_guard import SafetyGuard
+from plugin.plugins.openrails_copilot.core.snapshot import build_snapshot
 
 
 class FieldLogger:
@@ -198,7 +199,7 @@ class FieldTestRunner:
         await self.setup()
         self.logger.info("🚂 Open Rails Copilot 实战验证启动")
         self.logger.info(f"   监控时长: {duration}秒 ({duration/60:.0f}分钟)")
-        self.logger.info(f"   按 Ctrl+C 可提前停止")
+        self.logger.info("   按 Ctrl+C 可提前停止")
         self.logger.info("")
         
         end_time = time.time() + duration
@@ -381,7 +382,7 @@ class FieldTestRunner:
         
         print("")
         print("=" * 60)
-        print(f"✅ 报告已生成:")
+        print("✅ 报告已生成:")
         print(f"   📄 {json_path.absolute()}")
         print(f"   📄 {md_path.absolute()}")
         print("=" * 60)
