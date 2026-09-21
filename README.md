@@ -1,4 +1,3 @@
-<p align="center"><img src="icon.png" width="160" alt="Open Rails Copilot Plugin Icon"></p>
 
 # Open Rails Copilot Plugin
 
