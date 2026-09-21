@@ -172,11 +172,6 @@ python tests/simple_test.py
 - **[FEAT]** Field validation toolkit: `field_test.py` + `config_manager.py`
 - **[DOCS]** Complete documentation: 11 markdown files covering quickstart, tuning, validation
 
-## Feedback
-
-- **Repository**: https://github.com/YourUsername/n.e.k.o_plugin_openrails_copilot
-- Issues and suggestions are welcome via GitHub Issues or Pull Requests
-
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details
